@@ -27,7 +27,7 @@ void finale_answer(int sig)
 		int num = read(buff[0], res, 32);
 		if (num == 32)
 		{
-			printf("the string is: %s\n", res);
+			printf("encrypted by process %d : %s \n",pid,res);
 			free(res);
 		}
 	}
@@ -75,7 +75,7 @@ int main()
 	else if (pid > 0) //father
 	{
 		char str[100]; //input
-		printf("please enter a string: ");
+		printf("plain text: ");
 		scanf("%s", str);
 		int length = strlen(str);
 		if (length > 20) //check if the string is bigger than 20
